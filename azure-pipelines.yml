@@ -18,6 +18,14 @@ steps:
     npm test
   displayName: 'npm test'
 
+  steps:
+- task: Npm@1
+  displayName: 'npm custom'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'audit --registry=https://registry.npmjs.org/'
+
 - task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
