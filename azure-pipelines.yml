@@ -9,8 +9,8 @@ steps:
 - task: SnykTask@1
   inputs:
     file: 'package.json'
-    authType: 'none'
-
+    authType: 'token'
+    token: '4f43842f-a23d-4002-9d78-841b9ce6fc57'
 - script: |
     npm install
   displayName: 'npm install'
