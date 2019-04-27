@@ -1,10 +1,3 @@
-trigger:
-- task: SnykTask@1
-  inputs:
-    file: 'package.json'
-    authType: 'none'
-- master
-
 pool:
   vmImage: 'Ubuntu-16.04'
 
@@ -31,4 +24,10 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts: drop'
-  
+
+trigger:
+- task: SnykTask@1
+  inputs:
+    file: 'package.json'
+    authType: 'none'
+- master
