@@ -6,14 +6,6 @@ steps:
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
- - task: NodeTool@1
-  displayName: 'npm custom'
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'audit --registry=https://registry.npmjs.org/'
-
-
 
 - script: |
     npm install
@@ -23,7 +15,13 @@ steps:
     npm test
   displayName: 'npm test'
 
-
+ - task: NodeTool@1
+  displayName: 'npm custom'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'audit --registry=https://registry.npmjs.org/'
+    
 - task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
