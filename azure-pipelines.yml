@@ -6,7 +6,7 @@ steps:
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
- - task: Npm@0
+ - task: NodeTool@1
   displayName: 'npm custom'
   inputs:
     command: custom
