@@ -6,12 +6,10 @@ steps:
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
-- task: NodeTool@1
+- task: SnykTask@1
   inputs:
-    command: custom
-    verbose: false
-    customCommand: 'audit --registry=https://registry.npmjs.org/'
-  displayName: 'npm custom'
+    file: 'package.json'
+    authType: 'none'
 
 - script: |
     npm install
