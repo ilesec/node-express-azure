@@ -1,4 +1,8 @@
 trigger:
+- task: SnykTask@1
+  inputs:
+    file: 'package.json'
+    authType: 'none'
 - master
 
 pool:
